@@ -49,7 +49,7 @@ cd ${SUBJECT_SESSION}/anat/
 SUBJECT="${SUBJECT}_${SESSION}"
 
 # T1 image file name
-T1_image=$(find . -type f -name "*_MPRAGE.nii.gz" -print | head -n 1)
+T1_image=$(find . -type f -name "*_UNIT1.nii.gz" -print | head -n 1)
 
 # Contrast agnostic segmentation
 sct_deepseg -i "$T1_image" -task seg_sc_contrast_agnostic -o "${T1_image%.nii.gz}_seg.nii.gz" -qc ${PATH_QC} -qc-subject ${SUBJECT}
